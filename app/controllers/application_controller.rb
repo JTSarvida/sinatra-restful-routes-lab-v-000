@@ -8,8 +8,13 @@ class ApplicationController < Sinatra::Base
 
   # code actions here!
   
+<<<<<<< HEAD
   get '/recipes/new' do
     erb :new 
+=======
+  get '/' do
+    erb :index
+>>>>>>> 727615624736c9887d169c7f174777f7457d3a6c
   end
   
   get '/recipes' do
@@ -17,12 +22,20 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
   
+<<<<<<< HEAD
+=======
+  get '/recipes/new' do
+    erb :new 
+  end
+  
+>>>>>>> 727615624736c9887d169c7f174777f7457d3a6c
   post '/recipes' do
     @recipe = Recipe.create(params)
     redirect "/recipes/#{@recipe.id}"
   end
   
   get '/recipes/:id' do
+<<<<<<< HEAD
     @recipe = Recipe.find_by_id(params[:id])
     erb :show
   end
@@ -46,4 +59,11 @@ class ApplicationController < Sinatra::Base
     @recipe.save
     redirect to "/recipes/#{@recipe.id}"
   end
+=======
+    @recipe = Recipes.find_by_id(params[:id])
+    erb :show
+  end
+  
+  
+>>>>>>> 727615624736c9887d169c7f174777f7457d3a6c
 end
